@@ -30,7 +30,7 @@ ARG REDPILL_LKM_REPO=https://github.com/RedPill-TTG/redpill-lkm.git
 ARG REDPILL_LKM_BRANCH=master
 ARG REDPILL_LKM_SRC=/opt/redpill-lkm
 
-ARG REDPILL_LOAD_REPO=https://github.com/RedPill-TTG/redpill-load.git
+ARG REDPILL_LOAD_REPO=https://github.com/shookbeta/redpill-load
 ARG REDPILL_LOAD_BRANCH=master
 ARG REDPILL_LOAD_SRC=/opt/redpill-load
 
