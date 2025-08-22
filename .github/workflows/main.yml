@@ -115,14 +115,14 @@ jobs:
           ./redpill_tool_chain.sh auto ${{matrix.platform}}-${{matrix.version}}
 
       - name: 上传引导镜像到 github actions
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: dsm-${{matrix.platform}}-${{matrix.version}}
           path: images/redpill-*.img
           if-no-files-found: error
 
       - name: 删除旧的工作流
-        uses: Mattraks/delete-workflow-runs@v2
+        uses: Mattraks/delete-workflow-runs@v4
         with:
           retain_days: 1
           keep_minimum_runs: 3
