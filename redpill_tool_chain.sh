@@ -172,7 +172,7 @@ function downloadFromUrlIfNotExists(){
     local OUT_FILE="${2}"
     local MSG="${3}"
     if [ ! -e ${OUT_FILE} ]; then
-        echo "Downloading ${MSG} '${OUT_FILE}'"
+        echo "Downloading  ${DOWNLOAD_URL} ${MSG} '${OUT_FILE}'"
         curl -k --progress-bar --location ${DOWNLOAD_URL} --output ${OUT_FILE}
     fi
 }
