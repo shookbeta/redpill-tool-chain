@@ -172,7 +172,24 @@ function downloadFromUrlIfNotExists(){
     local OUT_FILE="${2}"
     local MSG="${3}"
     if [ ! -e ${OUT_FILE} ]; then
+        
+    
+
+ 
+        # 目标URL
+        TARGET_URL="https://global.synologydownload.com/download/ToolChain/toolkit/7.0/apollolake/ds.apollolake-7.0.dev.txz"
+        
+        # 判断并替换
+        if [ "$DOWNLOAD_URL" = "https://sourceforge.net/projects/dsgpl/files/toolkit/DSM7.0/ds.apollolake-7.0.dev.txz/download" ]; then
+            echo "检测到SourceForge链接，正在替换为Synology官方下载链接..."
+            DOWNLOAD_URL="$TARGET_URL"
+            echo "新的下载链接: $DOWNLOAD_URL"
+        else
+            echo "无需替换，当前链接: $DOWNLOAD_URL"
+        fi
+
         echo "Downloading  ${DOWNLOAD_URL} ${MSG} '${OUT_FILE}'"
+
         curl -k --progress-bar --location ${DOWNLOAD_URL} --output ${OUT_FILE}
     fi
 }
